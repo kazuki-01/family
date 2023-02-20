@@ -1,2 +1,4 @@
 <h1>Home#top</h1>
 <p>Find me in app/views/home/top.html.erb</p>
+
+<%= link_to "Log out", destroy_user_session_path, class: "#", data: { turbo_method: :delete, turbo_confirm: " 本当にログアウトしますか？"} %>
