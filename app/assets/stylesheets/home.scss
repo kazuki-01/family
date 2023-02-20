@@ -1,0 +1,55 @@
+.top{
+  .background {
+    background-image: url("/photo/top.jpeg");
+    background-size: cover;
+    background-position:center;
+    height: 852px;
+    .container {
+      width: 350px;
+      margin: 0 auto;
+      header {
+        height: 80px;
+        .header-left {
+          float:left;
+         margin-top: 20px;
+        }
+        .header-right {
+          float:right;
+          margin-top: 30px;
+          padding-right: 10px;
+           a{
+            color: #EE9441;
+           }
+        }
+      }
+
+      .mein-wrapper {
+        color: #EE9441;
+        text-align: center;
+        padding-top: 70px;
+
+        .heading {
+          font-size: 36px;
+          margin: 30px 0;
+        }
+        text {
+          font-size: 20px;
+        }
+
+        .btn-wrapper {
+          margin-top: 300px;
+          a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            padding: 8px 80px;
+            display: inline-block;
+            background-color: #EE9441;
+            border-radius: 1px;
+            margin: 15px 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,29 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<div class="top">
+  <div class="background">
+    <div class="container">
+      <header>
+        <div class="header-left">
+          <img class="logo" src="/photo/logo.png" alt="">
+        </div>
+        <div class="header-right">
+          <h2><%= link_to "ログイン  /  新規登録", new_user_session_path %></h2>
+        </div>
+      </header>
+
+      <div class="mein-wrapper">
+        <h2 class="heading">FAMILY_TASK</h2>
+        <p class="text">日々のタスクの管理・分析<br>コミュニケーションのサポート</p>
+
+        <div class="btn-wrapper">
+          <%= link_to "新規登録", new_user_registration_path %>
+          <%= link_to "ログイン", new_user_session_path %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <%= link_to "Log out", destroy_user_session_path, class: "#", data: { turbo_method: :delete, turbo_confirm: " 本当にログアウトしますか？"} %>
