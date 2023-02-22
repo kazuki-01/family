@@ -1,39 +1,56 @@
-<div class="box1">
-  <div class="box-inner">
-    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-    <h1>新規登録</h1>
-    <div class="box-name">
-      <%= f.label :name, "名前" %><br />
-      <%= f.text_field :name, autofocus: true %>
-    </div>
+<div class="user-new">
+  <div class="background">
+    <div class="container">
 
-    <div class="box-email">
-      <%= f.label :email, "Eメール" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
+      <div class="mein-wrapper">
+        <div class="heading">
+          <h2 >新規登録</h2>
+        </div>
+        <div class="formbox">
+          <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |form| %>
+            <div class="form">
+              <div class="form-title">
+                <%=form.label :user_icon, "ユーザーアイコン" %><br>
+              </div>
+              <div class="file-form">
+                <%= form.file_field :user_icon %>
+              </div>
+            </div>
 
-    <div class="box-password">
-      <%= f.label :password, "パスワード" %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
+            <div class="form">
+              <div class="form-title">
+                <%=form.label :name, "お名前" %><br>
+              </div>
+              <%=form.text_field :name %>
+            </div>
 
-    <div class="box-password">
-      <%= f.label :password_confirmation, "パスワード(確認)" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+            <div class="form">
+              <div class="form-title">
+                <%=form.label :email, "メールアドレス" %><br>
+              </div>
+              <%=form.email_field :email %>
+            </div>
 
-    <div class="box-login">
-      <%= f.submit "新規登録" %>
-    </div>
-    <% end %>
+            <div class="form">
+              <div class="form-title">
+                <%=form.label :password, "パスワード" %><br>
+              </div>
+              <%=form.password_field :password %>
+            </div>
 
-    <div class="box-newusr">
-      <p><span>------------</span> 既に登録されていますか？ <span>------------</span></p>
-      <%= link_to "ログイン", new_user_session_path %>
+            <div class="form">
+              <div class="form-title">
+                <%=form.label :password_confirmation, "パスワード(確認)" %><br>
+              </div>
+              <%=form.password_field :password_confirmation %>
+            </div>
+            <div class="btn-wrapper">
+              <%= form.submit "登録する"%>   
+            </div>
+          <% end %>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
