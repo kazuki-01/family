@@ -1,0 +1,52 @@
+<div class="user-check">
+  <div class="background">
+    <div class="container">
+
+      <div class="mein-wrapper">
+        <div class="heading">
+          <h2 >登録内容の確認</h2>
+        </div>
+        <div class="formbox">
+          <%= form_with model:@user, url: user_registration_path ,method: :post do |form| %>
+            <div class="form">
+               <p> <%=form.label :user_icon, "ユーザーアイコン" %></p><br>
+                <h2><input type="file" name="user_icon" value=""></h2>
+            </div>
+
+            <div class="form">
+              <div class="name">
+               <p> <%=form.label :name, "お名前" %></p><br>
+               <h2><input name="name" value="<%= @user.name %>"></h2>
+              </div>
+            </div>
+
+            <div class="form">
+              <p><%=form.label :email, "メールアドレス" %></p><br>
+              <h2><input name="email" value="<%= @user.email %>"></h2>
+            </div>
+
+            <div class="form">
+              <div class="password">
+                <p><%=form.label :password, "パスワード" %></p><br>
+                 <h2><input name="password" value="<%= @user.password %>"></h2>
+              </div>
+            </div>
+
+            <div class="form">
+              <div class="password">
+                <p><%=form.label :password_confirmation, "パスワード(確認)" %></p><br>
+                <h2><input name="password_confirmation" value="<%= @user.password_confirmation %>"></h2>
+              </div>
+            </div>
+
+            <div class="btn-wrapper">
+              <%= form.submit "登録する"%>   
+              <%= link_to "修正する", new_user_registration_path %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
