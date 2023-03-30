@@ -5,6 +5,9 @@ require "active_support/core_ext/integer/time"
 # your test database is "scratch space" for the test suite and is wiped
 # and recreated between test runs. Don't rely on the data there!
 
+# ローカルファイルシステム上のアップロード済みファイルを一時ディレクトリに保存する
+config.active_storage.service = :test
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'home/top'
 
   devise_scope :user do
+    post 'users/confirm' => 'users/registrations#confirm'
+    post 'users/check' => 'users/registrations#check'
     get 'users/check' => 'users/registrations#check'
   end
   

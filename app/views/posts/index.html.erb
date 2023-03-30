@@ -1,4 +1,17 @@
 <h1>Posts#index</h1>
 <p>Find me in app/views/posts/index.html.erb</p>
 
+<%= current_user.email %>
+
+
+
+  <% if current_user.user_icon.attached? %>
+    <%= image_tag current_user.user_icon %>
+
+  <% else %>
+    <p>no.image</p>
+  <% end %>
+
+  
+
 <%= link_to "Log out", destroy_user_session_path, class: "#", data: { turbo_method: :delete, turbo_confirm: " 本当にログアウトしますか？"} %>

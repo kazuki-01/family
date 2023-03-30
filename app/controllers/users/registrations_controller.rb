@@ -10,24 +10,27 @@
       super
     end
 
+    
     def check
-      Rails.logger.debug(user_params)
+      @user = User.new(user_icon: params[:user_icon], name: params[:name], email: params[:email], password: params[:password],password_confirmation: params[:password_confirmation])
+      logger.debug "新しい記事: #{@user.attributes.inspect}"
+      if @user.invalid?
+        render :new
+      end
+    end
+
+    def confirm
       @user = User.new(user_params)
-      puts @user
+      logger.debug "新しい記事: #{@user.attributes.inspect}"
+      redirect_to users_check_path
     end
   
   
     # POST /users
     def create
-      @user = User.new(name: params[:name], email: params[:email], password: params[:password])
-      Rails.logger.debug("bbbbb")
-      Rails.logger.debug(params[:user_icon])
-      if @user.save
-        session[:user_id] = @user.id
-        redirect_to posts_index_path(@user), notice: "新規登録が完了しました。"
-      else
-        render :new, status: :unprocessable_entity
-      end
+      Rails.logger.debug('aaaaa')
+      super
+      Rails.logger.debug('bbbbb')
     end
   
     # GET /users/edit
@@ -49,8 +52,9 @@
     def cancel
       super
     end
-  
-    protected
+
+
+    private
 
     def user_params
       params.require(:user).permit(:user_icon, :name, :email, :password, :password_confirmation)
@@ -58,21 +62,12 @@
   
     # 許可するための追加のパラメータがある場合は、sanitizer に追加してください
     def configure_sign_up_params
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :user_icon])
     end
+
   
-    # 許可するための追加のパラメータがある場合は、sanitizer に追加してください
-    def configure_account_update_params
-      devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-    end
-  
-    # サインアップ後に使用する path
     def after_sign_up_path_for(resource)
-      super(resource)
+      posts_index_path(resource)
     end
-  
-    # アクティブでないアカウントのサインアップ後に使用する path
-    def after_inactive_sign_up_path_for(resource)
-      super(resource)
-    end
+
   end
