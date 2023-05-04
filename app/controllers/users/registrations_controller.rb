@@ -18,13 +18,6 @@
         render :new
       end
     end
-
-    def confirm
-      @user = User.new(user_params)
-      logger.debug "新しい記事: #{@user.attributes.inspect}"
-      redirect_to users_check_path
-    end
-  
   
     # POST /users
     def create

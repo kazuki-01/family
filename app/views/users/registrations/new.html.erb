@@ -6,8 +6,8 @@
         <div class="heading">
           <h2 >新規登録</h2>
         </div>
-        <div class="formbox">
-          <%= form_with url: users_check_path, method: :get, local: true do |form| %>
+        <div class="formbox" data-turbo='false'>
+          <%= form_with url: users_check_path do |form| %>
             <div class="form">
               <div class="form-title">
                 <%=form.label :user_icon, "ユーザーアイコン" %><br>
