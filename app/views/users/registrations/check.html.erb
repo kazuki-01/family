@@ -7,7 +7,7 @@
           <h2 >登録内容の確認</h2>
         </div>
         <div class="formbox">
-          <%= form_with model:@user, url: user_registration_path ,method: :post do |form| %>
+          <%= form_with model:@user, url: user_registration_path ,method: :post, multipart: true do |form| %>
             <div class="form">
                <%=form.label :user_icon, "ユーザーアイコン" %><br>
                <%= form.file_field :user_icon %>
