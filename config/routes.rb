@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, module: "users"
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+                     #ユーザー更新するときに、after_update_path_forを有効にする
   
   root 'home#top'
-  get 'home/top'
 
   devise_scope :user do
     post 'users/check' => 'users/registrations#check'
