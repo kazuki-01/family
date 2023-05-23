@@ -3,7 +3,6 @@
 
   class Users::RegistrationsController < Devise::RegistrationsController
     before_action :configure_sign_up_params, only: [:create]
-    before_action :configure_account_update_params, only: [:update]
   
     # GET /users/sign_up
     def new
@@ -52,13 +51,14 @@
     def user_params
       params.require(:user).permit(:user_icon, :name, :email, :password, :password_confirmation)
     end
-  
-    # 許可するための追加のパラメータがある場合は、sanitizer に追加してください
-    def configure_sign_up_params
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :user_icon])
+
+    protected
+
+    def after_update_path_for(resource)
+      # 自分で設定した「マイページ」へのパス
+      posts_index_path(current_user)
     end
 
-  
     def after_sign_up_path_for(resource)
       posts_index_path(resource)
     end
