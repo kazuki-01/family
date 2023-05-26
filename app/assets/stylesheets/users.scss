@@ -220,3 +220,23 @@
     }
   }
 }
+
+/* ユーザー編集画面 (edit)ーーーーーーーーーーーーーーーーーーーーーーーーー*/
+.user-edit{
+  .container{
+    header{
+      background-color: #EE9441;
+      height: 60px;
+      margin-bottom: 20px;
+      img{
+        margin-top: -7px;
+      } 
+      p{
+        font-size: 24px;
+        color: white;
+        text-align: center;
+        margin-top: -60px;
+      }
+    }
+  }
+}
