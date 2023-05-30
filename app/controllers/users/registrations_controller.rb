@@ -2,7 +2,7 @@
 
 
   class Users::RegistrationsController < Devise::RegistrationsController
-    before_action :configure_sign_up_params, only: [:create]
+    before_action :configure_permitted_parameters, only: [:create]
   
     # GET /users/sign_up
     def new
