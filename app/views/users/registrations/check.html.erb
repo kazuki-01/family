@@ -16,26 +16,32 @@
             <div class="form">
               <div class="name">
                <%=form.label :name, "お名前" %><br>
-               <h2><input type="text" value="<%= params[:name] %>" name="user[name]" id="user_name" /></h2>
+               <p><%= @user.name %></p>
+               <input type="hidden" value="<%= params[:name] %>" name="user[name]" id="user_name" />
               </div>
             </div>
 
             <div class="form">
-              <%=form.label :email, "メールアドレス" %><br>
-              <h2><input type="email" value="<%= params[:email] %>" name="user[email]" id="user_email" /></h2>
-            </div>
-
-            <div class="form">
-              <div class="password">
-                <%=form.label :password, "パスワード" %><br>
-                 <h2><input type="password" value="<%= params[:password] %>" name="user[password]" id="user_password" /></h2>
+              <div class="email">
+                <%=form.label :email, "メールアドレス" %><br>
+                <p><%= @user.email %></p>
+                <input type="hidden" value="<%= params[:email] %>" name="user[email]" id="user_email" />
               </div>
             </div>
 
             <div class="form">
               <div class="password">
-                <%=form.label :password_confirmation, "パスワード(確認)" %><br>
-                <h2><input type="password" value="<%= params[:password_confirmation] %>" name="user[password_confirmation]" id="user_password_confirmation" /></h2>
+                <div class="password">
+                  <%=form.label :password, "パスワード" %><br>
+                  <p><%= @user.password %></p>
+                  <input type="hidden" value="<%= params[:password] %>" name="user[password]" id="user_password" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form">
+              <div class="password">
+                <input type="hidden" value="<%= params[:password_confirmation] %>" name="user[password_confirmation]" id="user_password_confirmation" />
               </div>
             </div>
 
