@@ -1,0 +1,122 @@
+.post-index{
+
+  .container{
+      .heading{
+        .nav{
+          list-style:none;
+          background-color: #EE9441;
+          border-top: solid 2px white;
+          height: 60px;
+        }
+        .nav a{
+          color: white;
+          font-size: 32px;
+          line-height: 60px;
+          display: inline-block;
+          height: 60px;
+          width: 49%;
+          text-decoration: none;
+          text-align: center;
+        }
+        .btn{
+          background-color: rgba(244, 202, 117, 0.5);
+          border-right: solid 2px white;
+        }
+      }
+
+     *{
+       margin: 0;
+       padding: 0;
+      }
+      
+    .mein-wrapper{
+       padding-top: 30px;
+       width: 100vw;
+       height: 100vh;
+       background-color: rgba(250, 223, 169, 0.5);
+       margin-bottom: 0px;
+     
+
+      .task-wrapper{
+        margin-bottom: 40px;
+        .field{
+          margin: 5px 5%;
+          height: 60px;
+          width: 90%;
+          background-color: white;
+          position: relative;
+
+        .check{
+          cursor: pointer;
+        }
+          
+
+          input{
+            display: none;
+          }
+          p{
+            font-size: 20px;
+            position: absolute;
+            top: 17px;
+            right: 0px;
+            bottom: 0px;
+            left: 60px;
+          }
+        }
+      }
+      .done-wrapper{
+        margin: 0px 5%;
+        width: 90%;
+        .done{
+            border-top: solid 2px rgb(75, 75, 75);
+          p{
+            margin-top: 10px;
+          }
+          .field{
+            margin: 10px 0px;
+            height: auto;
+            background-color: white;
+            position: relative;
+            padding-bottom: 40px;
+
+            .time{
+              p{
+                font-size: 15px;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 60px;
+              }
+            }
+            .task{
+              p{
+                font-size: 20px;
+                position: absolute;
+                top: 20px;
+                right: 0px;
+                bottom: 0px;
+                left: 60px;
+              }
+            }
+            .thanks{
+              a{
+                font-size: 15px;
+                position: absolute;
+                top: 70px;
+                right: 0px;
+                bottom: 0px;
+                left: 110px;
+              }
+            }
+          }
+        }
+      }
+      .btn {
+        position: fixed;
+        left: 75%;
+        top: 75%;
+    }
+    }
+  }
+}
