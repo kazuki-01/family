@@ -56,11 +56,11 @@
 
     def after_update_path_for(resource)
       # 自分で設定した「マイページ」へのパス
-      posts_index_path(current_user)
+      posts_path(current_user)
     end
 
     def after_sign_up_path_for(resource)
-      posts_index_path(resource)
+      posts_path(resource)
     end
 
   end
