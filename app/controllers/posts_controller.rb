@@ -3,5 +3,23 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
+  # 空のpostインスタンスを生成する
   end
+
+  def create
+    @post = Post.new(post_params)
+  # newページで入力した内容が格納された状態のインスタンスが飛んでくる
+    if @post.save
+      redirect_to posts_path
+    else
+      render 'new'
+    end
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:task, :emphasis, :labor, :classification)
+  end
+
 end
