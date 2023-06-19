@@ -1,0 +1,64 @@
+<div class="post-edit">
+  <header>
+      <div class="header-left">
+      <%= link_to image_tag("/photo/arrow.png", class:"edit", :size => "83x83"), posts_path %>
+    </div>
+    <div class="headding">
+      <p>タスクの編集</p>
+    </div>
+  </header>
+  <div class="mein-wrapper">
+    <div class="formbox">
+      <%= form_with url: post_path, method: "patch", scope: :post do |form| %>
+        <div class="form-1">
+          <%=form.label :task, "タスク名" %><br>
+          <%=form.text_field :task %>
+        </div>
+          <div class="check-box">
+            <%= form.check_box :emphasis, {}, "true", "false" %>
+            <p>重要（タスクが強調されます）</p>
+          </div>
+
+
+       <div class="form-2">
+        <%= form.label :labor,"労力" %>
+        <%= form.number_field :labor, in: 1..10 %>
+       </div>
+
+      <div class="form-3">
+        <h2>タスクの分類</h2>
+        <label><%= form.radio_button :classification, :generally, checked: true %>通常のタスク</label><br>
+        <label><%= form.radio_button :classification, :everyday%>毎日のタスク</label><br>
+        <p>*毎日自動でタスクが追加されます。</p>
+        <div class="paid">
+          <label><%= form.radio_button :classification, :date%>日にち指定のタスク</label>
+          <p>※指定した日にちにタスクが<br>
+            &emsp;自動で追加されます。<font color="red">（有料）</font></p>
+        </div>
+        <div class="paid">
+          <label><%= form.radio_button :classification, :week%>曜日指定のタスク</label>
+          <p>※指定した曜日にタスクが<br>
+            &emsp;自動で追加されます。<font color="red">（有料）</font></p>
+        </div>
+      </div>
+
+      <%= link_to "無料で有料プランを試す", "/" %>
+
+      <div class="btn-wrapper">
+        <%= form.submit "タスクを更新する"%>   
+      </div>
+
+      <% end %>
+
+    <%= current_user.email %>
+    <% if current_user.user_icon.attached? %>
+      <%= image_tag current_user.user_icon, :size => "50x50" %>
+    <% else %>
+      <p><%= image_tag("default_icon.png", :size => "50x50") %></p>
+    <% end %>
+
+
+
+    <%= link_to "Log out", destroy_user_session_path, class: "#", data: { turbo_method: :delete, turbo_confirm: " 本当にログアウトしますか？"} %>
+  </div>
+</div>
