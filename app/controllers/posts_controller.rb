@@ -9,13 +9,24 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    post = Post.new(post_params)
   # newページで入力した内容が格納された状態のインスタンスが飛んでくる
-    if @post.save
+    if post.save
       redirect_to posts_path
     else
       render 'new'
     end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to posts_path
+
   end
 
   private
