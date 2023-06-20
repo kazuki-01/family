@@ -65,6 +65,33 @@
             left: 60px;
           }
         }
+        .field-emphasis{
+          margin: 5px 5%;
+          height: 60px;
+          width: 90%;
+          background-color: #FFB1B1;
+          position: relative;
+
+        .check{
+          cursor: pointer;
+        }
+          
+
+          input{
+            display: none;
+          }
+          a{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            position: absolute;
+            top: 17px;
+            right: 0px;
+            bottom: 0px;
+            left: 60px;
+            font-weight: bold;
+          }
+        }
       }
       .done-wrapper{
         margin: 0px 5%;
