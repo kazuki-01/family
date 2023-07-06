@@ -13,25 +13,31 @@
        <div class="task-wrapper">
        <% @posts.each do |post| %>
         <% if post.emphasis %>
-          <div class="field-emphasis">
-            <label for="radio-1" class="radio-label">
-              <%= image_tag("/photo/check_btn.png", class:"check", :size => "50x50")%>
-
-              <div class="task">
-                <%= link_to post.task, edit_post_path(post.id) %>
-              </div>
-            </label>
-          </div>
-          <% else %>
-          <div class="field">
-            <label for="radio-1" class="radio-label">
-              <%= image_tag("/photo/check_btn.png", class:"check", :size => "50x50")%>
-
-              <div class="task">
-                <%= link_to post.task, edit_post_path(post.id) %>
-              </div>
-            </label>
-          </div>
+          <%= form_with url: dones_create_path, method: "post" do |form| %>
+            <div class="field-emphasis">
+                <div class="task">
+                  <%= link_to post.task, edit_post_path(post.id) %>
+                </div>
+                <input type="hidden" value="<%= post.task %>" name="task" />
+                <input type="hidden" value="<%= post.labor %>" name="labor" />
+                <input type="hidden" value="<%= post.classification %>" name="classification" />
+                <input type="hidden" value="<%= post.id %>" name="id" />
+                <input type="image" src="/photo/check_btn.png" name="button1" alt="送信する">
+            </div>
+          <% end %>
+        <% else %>
+          <%= form_with url: dones_create_path, method: "post" do |form| %>
+            <div class="field">
+                <div class="task">
+                  <%= link_to post.task, edit_post_path(post.id) %>
+                </div>
+                <input type="hidden" value="<%= post.task %>" name="task" />
+                <input type="hidden" value="<%= post.labor %>" name="labor" />
+                <input type="hidden" value="<%= post.classification %>" name="classification" />
+                <input type="hidden" value="<%= post.id %>" name="id" />
+                <input type="image" src="/photo/check_btn.png" name="button1" alt="送信する">
+            </div>
+          <% end %>
         <% end %>
       <% end %>
        </div>

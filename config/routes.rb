@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
   resources :posts
 
+  get 'dones/new' => 'dones#new'
+  post 'dones/create' => 'dones#create'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
