@@ -45,24 +45,26 @@
        <div class="done-wrapper">
          <div class="done">
          <p>完了したタスク</p>
+       <% @dones.each do |done| %>
          <div class="field">
           <div class="chat">
-            <% if current_user.user_icon.attached? %>
-              <%= image_tag current_user.user_icon, :size => "50x50" %>
-            <% else %>
-              <%= image_tag("default_icon.png", :size => "50x50") %>
-            <% end %>
+          <% if User.find(done.user_id).user_icon.attached? %>
+              <%= image_tag User.find(done.user_id).user_icon, :size => "50x50" %>
+          <% else %>
+            <p><%= image_tag("default_icon.png", :size => "50x50") %></p>
+          <% end %>
             <div class="time">
-              <p>2022/11/03  8:45</p>
+              <p><%= done.updated_at %></p>
             </div>
             <div class="task">
-              <p>洗濯物を干す</p>
+              <p><%= done.task %></p>
             </div>
             <div class="thanks">
               <a href="#">お礼の言葉を送る</a>
             </div>
           </div>
          </div>
+       <% end %>
        </div> 
        <div class="btn">
         <%= link_to image_tag("/photo/plus.png", class:"btn", :size => "85x85"), new_post_path %>
