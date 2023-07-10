@@ -33,7 +33,12 @@
   
     # PUT /users
     def update
-      super
+      if current_user.update(update_params)
+        redirect_to posts_path(current_user)
+      else
+        render :edit
+      end
+  
     end
   
     # DELETE /users
@@ -61,6 +66,10 @@
 
     def after_sign_up_path_for(resource)
       posts_path(resource)
+    end
+
+    def update_params
+      params.require(:user).permit(:user_icon, :name)
     end
 
   end
