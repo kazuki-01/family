@@ -17,6 +17,17 @@ class PostsController < ApplicationController
     else
       render 'new'
     end
+
+    wday = Weekly.new(task: post.task, emphasis: post.emphasis, labor: post.labor, classification: post.classification, day_of_week: params[:day_of_week])
+    if wday.classification == "generally"
+    elsif wday.classification == "week"
+      wday.save
+    elsif wday.classification == "everyday"
+      wday.day_of_week = '["1", "2", "3", "4", "5", "6", "0"]'
+      wday.save
+    else
+      Rails.logger.debug('aaaaa')
+    end
   end
 
   def edit
