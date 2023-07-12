@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: MyString
+  labor: 1
+  classification: MyString
+  day_of_week: 1
+
+two:
+  task: MyString
+  labor: 1
+  classification: MyString
+  day_of_week: 1
