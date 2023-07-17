@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post 'users/check' => 'users/registrations#check'
   end
   resources :posts
+  resources :weeklies
 
   get 'dones/new' => 'dones#new'
   post 'dones/create' => 'dones#create'
