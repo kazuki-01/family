@@ -1,0 +1,3 @@
+class WeekliesController < ApplicationController
+
+end
