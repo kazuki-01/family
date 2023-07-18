@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_12_142328) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_18_070334) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -78,7 +78,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_12_142328) do
     t.string "task", null: false
     t.integer "labor", null: false
     t.string "classification", null: false
-    t.string "day_of_week", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "emphasis", default: false, null: false
