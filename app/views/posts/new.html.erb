@@ -40,20 +40,27 @@
           <p>※指定した曜日にタスクが<br>
             &emsp;自動で追加されます。<font color="red">（有料）</font></p>
           <div>
-            <input id="monday" name="day_of_week[]" type="checkbox" value="1">
-            <label for="monday">月</label>
-            <input id="tuesday" name="day_of_week[]" type="checkbox" value="2">
-            <label for="tuesday">火</label>
-            <input id="wednesday" name="day_of_week[]" type="checkbox" value="3">
-            <label for="wednesday">水</label>
-            <input id="thursday" name="day_of_week[]" type="checkbox" value="4">
-            <label for="thursday">木</label>
-            <input id="friday" name="day_of_week[]" type="checkbox" value="5">
-            <label for="friday">金</label>
-            <input id="saturday" name="day_of_week[]" type="checkbox" value="6">
-            <label for="saturday">土</label>
-            <input id="sunday" name="day_of_week[]" type="checkbox" value="0">
-            <label for="sunday">日</label>
+            <label>
+              <%= form.check_box :monday, {}, "true", "false" %>月
+            </label>
+            <label>
+              <%= form.check_box :tuesday, {}, "true", "false" %>火
+            </label>
+            <label>
+              <%= form.check_box :wednesday, {}, "true", "false" %>水
+            </label>
+            <label>
+              <%= form.check_box :thursday, {}, "true", "false" %>木
+            </label>
+            <label>
+              <%= form.check_box :friday, {}, "true", "false" %>金
+            </label>
+            <label>
+              <%= form.check_box :saturday, {}, "true", "false" %>土
+            </label>
+            <label>
+              <%= form.check_box :sunday, {}, "true", "false" %>日
+            </label>
           </div>
         </div>
       </div>
