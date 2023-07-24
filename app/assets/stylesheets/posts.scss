@@ -220,14 +220,29 @@
           input {
             width: 25px;
             height: 25px;
-            margin: 20px 20px 20px 5px;
+            margin: 20px 10px 20px 5px;
           }
           label{
             font-size: 25px;
-            margin: 20px 20px 20px 5px;
+            margin: 20px 15px 20px 5px;
           }
           .paid{
+            .date-field{
+              margin-left: 50px;
+              input{
+                width: 200px;
+              }
+            }
             margin: 10px 0;
+            .wday-check-box{
+              label{
+                font-size: 20px;
+              }
+              input{
+                width: 13px;
+                height: 15px;
+              }
+            }
           }
         }
       }

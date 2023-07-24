@@ -34,12 +34,15 @@
           <label><%= form.radio_button :classification, :date%>日にち指定のタスク</label>
           <p>※指定した日にちにタスクが<br>
             &emsp;自動で追加されます。<font color="red">（有料）</font></p>
+          <div class="date-field">
+            <%= form.date_field :date %>
+          </div>
         </div>
         <div class="paid">
           <label><%= form.radio_button :classification, :week%>曜日指定のタスク</label>
           <p>※指定した曜日にタスクが<br>
             &emsp;自動で追加されます。<font color="red">（有料）</font></p>
-          <div>
+          <div class="wday-check-box">
             <label>
               <%= form.check_box :monday, {}, "true", "false" %>月
             </label>
