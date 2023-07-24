@@ -57,6 +57,9 @@ namespace :weekly_task do
         Post.create(task: task.task, emphasis: task.emphasis, labor: task.labor, classification: task.classification)
       end
 
+      if Date.today == task.date
+        Post.create(task: task.task, emphasis: task.emphasis, labor: task.labor, classification: task.classification)
+      end
     end
 
     #デバッグのため

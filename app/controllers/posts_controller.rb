@@ -20,6 +20,9 @@ class PostsController < ApplicationController
       elsif wday.classification == "week"
         wday.save
         redirect_to posts_path
+      elsif wday.classification == "date"
+        wday.save
+        redirect_to posts_path
       elsif wday.classification == "everyday"
         wday.monday = true
         wday.tuesday = true
@@ -59,7 +62,7 @@ class PostsController < ApplicationController
   end
 
   def weekly_params
-    params.require(:post).permit(:task, :emphasis, :labor, :classification, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday)
+    params.require(:post).permit(:task, :emphasis, :labor, :classification, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :date)
   end
 
 end
