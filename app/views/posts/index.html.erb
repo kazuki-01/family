@@ -46,21 +46,22 @@
          <div class="done">
          <p>完了したタスク</p>
        <% @dones.each do |done| %>
+        <% @done = done %>
          <div class="field">
           <div class="chat">
-          <% if User.find(done.user_id).user_icon.attached? %>
-              <%= image_tag User.find(done.user_id).user_icon, :size => "50x50" %>
+          <% if User.find(@done.user_id).user_icon.attached? %>
+              <%= image_tag User.find(@done.user_id).user_icon, :size => "50x50" %>
           <% else %>
             <p><%= image_tag("default_icon.png", :size => "50x50") %></p>
           <% end %>
             <div class="time">
-              <p><%= done.updated_at.strftime('%Y/%m/%d %H:%M') %></p>
+              <p><%= @done.updated_at.strftime('%Y/%m/%d %H:%M') %></p>
             </div>
             <div class="task">
-              <p><%= done.task %></p>
+              <p><%= @done.task %></p>
             </div>
             <div class="thanks">
-              <a href="#">お礼の言葉を送る</a>
+              <%= link_to "お礼の言葉を送る", new_chat_path(@done.id) %>
             </div>
           </div>
          </div>
