@@ -1,6 +1,8 @@
 class ChatsController < ApplicationController
 
 def new
+  @chat = Chat.new
+  @done = Done.find_by(id: params[:format])
 end
 
 def create
