@@ -82,5 +82,50 @@
         }
       }
     }
+    .chat-wrapper{
+      .container{
+        width: 80%;
+        margin: 0 auto;
+        .heading{
+          font-size: 32px;
+          padding-bottom: 80px;
+          .heading-left{
+            float: left;
+            h2 {
+              font-weight:normal
+            }
+          }
+          .heading-right{
+            float: right;
+            a{
+              font-size: 13px;
+            }
+          }
+        }
+
+        .chat-form{
+          input{
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+          }
+        }
+        .btn-wrapper{
+          text-align: center;
+          margin: 40px 0;
+          input{
+            background-color: #EE9441;
+            display: inline-block;
+            color: white;
+            font-size: 24px;
+            width: 85%;
+            height: 50px;
+            border: none;
+            cursor: pointer;
+            margin-top: 250px;
+          }
+        }
+      }
+    }
   }
 }

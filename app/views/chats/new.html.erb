@@ -30,6 +30,32 @@
         </div>
       </div>
     </div>
+    <div class="chat-wrapper">
+      <div class="container">
+        <div class="heading">
+        <div class="heading-left">
+          <h2>お礼の言葉</h2>
+        </div>
+        <div class="heading-right">
+          <a href="#">お礼の言葉を登録する</a>
+        </div>
+        </div>
+        <div class="chat-form">
+          <%= form_with url: chats_path, scope: :chat do |form|%>
+          <input type="hidden" value="<%= @done.id %>" name="chat[done_id]" />
+          <%=form.text_field :message, list: 'message' %>
+            <datalist id="message">
+              <option value="ありがとう">
+              <option value="お疲れさまです。">
+              <option value="助かりました。">
+            </datalist>
+            <div class="btn-wrapper">
+              <%= form.submit "お礼の言葉を送る"%>   
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
