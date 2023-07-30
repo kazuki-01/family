@@ -32,7 +32,7 @@
     .mein-wrapper{
        padding-top: 30px;
        width: 100vw;
-       height: 100vh;
+       height: auto;
        background-color: rgba(250, 223, 169, 0.5);
        margin-bottom: 0px;
      
@@ -118,9 +118,21 @@
                 left: 60px;
               }
             }
+            .thanks{
+              padding-bottom: 38px;
+              a{
+                font-size: 18px;
+                position: absolute;
+                top: 70px;
+                right: 0px;
+                bottom: 0px;
+                left: 90px;
+              }
+            }
             .chat-thank{
               margin: 10px 0px;
               height: auto;
+              padding-bottom: 25px;
               position: relative;
               .time{
                 p{
@@ -134,25 +146,15 @@
                 }
               }
               .message{
+                height: auto;
                 p{
-                  font-size: 20px;
+                  font-size: 16px;
                   position: absolute;
                   top: 20px;
                   right: 0px;
                   bottom: 0px;
                   left: 60px;
                 }
-              }
-            }
-            .thanks{
-              padding-bottom: 38px;
-              a{
-                font-size: 18px;
-                position: absolute;
-                top: 70px;
-                right: 0px;
-                bottom: 0px;
-                left: 90px;
               }
             }
           }
