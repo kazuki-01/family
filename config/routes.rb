@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post 'dones/create' => 'dones#create'
 
   resources :chats
+  resources :thanks
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
