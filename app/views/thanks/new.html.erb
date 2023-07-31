@@ -1,0 +1,25 @@
+<div class="thank-new">
+  <header>
+    <div class="header-left">
+      <%= link_to image_tag("/photo/arrow.png", class:"edit", :size => "83x83"), posts_path %>
+    </div>
+    <div class="headding">
+      <p>お礼の言葉登録</p>
+    </div>
+  </header>
+  <div class="mein-wrapper">
+    <div class="container">
+      <div class="form-wrapper">
+        <%= form_with url: thanks_path, scope: :thank do |form|%>
+        <div class="text-form">
+          <%=form.text_field :text %>
+        </div>
+        <div class="btn-wrapper">
+          <%= form.submit "追加"%>  
+        </div>
+        <% end %> 
+      </div>
+    </div>
+  </div>
+</div>
+
