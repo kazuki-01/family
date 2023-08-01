@@ -3,6 +3,7 @@ class ChatsController < ApplicationController
 def new
   @chat = Chat.new
   @done = Done.find_by(id: params[:format])
+  @thanks = Thank.all.order(created_at: :asc)
 end
 
 def create

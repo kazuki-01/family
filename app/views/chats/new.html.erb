@@ -46,9 +46,9 @@
           <input type="hidden" value="<%= @done.id %>" name="chat[done_id]" />
           <%=form.text_field :message, list: 'message' %>
             <datalist id="message">
-              <option value="ありがとう">
-              <option value="お疲れさまです。">
-              <option value="助かりました。">
+            <% @thanks.each do |thank| %>
+              <option value=<%= thank.text %> >
+            <% end %>
             </datalist>
             <div class="btn-wrapper">
               <%= form.submit "お礼の言葉を送る"%>   
