@@ -1,7 +1,7 @@
 class ThanksController < ApplicationController
 
   def new
-    @thanks = Thank.all.order(created_at: :desc)
+    @thanks = Thank.all.order(created_at: :asc)
   end
 
   def create
@@ -17,6 +17,9 @@ class ThanksController < ApplicationController
   end
 
   def destroy
+    @thank = Thank.find(params[:id])
+    @thank.destroy
+    redirect_to new_thank_path
   end
 
   private
