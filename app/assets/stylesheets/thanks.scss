@@ -41,6 +41,31 @@
           }
         }
       }
+      .thanks-wrapper{
+        padding-top: 30px;
+        .thank{
+          margin: 5px 0px;
+          height: 50px;
+          width: 100%;
+          background-color: white;
+          font-size: 20px;
+          position: relative;
+          p{
+            position: absolute;
+            top: 13px;
+            right: 0px;
+            bottom: 0px;
+            left: 16px;
+            width: 85%;
+          }
+          img{
+            float: right;
+            padding-top: 10px;
+            padding-right: 10px;
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }

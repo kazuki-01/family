@@ -19,6 +19,14 @@
         </div>
         <% end %> 
       </div>
+      <div class="thanks-wrapper">
+        <% @thanks.each do |thank| %>
+        <div class="thank">
+          <p><%= thank.text %></p>
+          <%= link_to image_tag("/photo/delete.png", class:"delete", :size => "30x30"), thank_path(thank.id), data: { turbo_method: :delete, turbo_confirm: "「#{thank.text}」を削除してもよろしいですか？"} %>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
