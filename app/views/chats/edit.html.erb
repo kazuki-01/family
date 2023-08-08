@@ -1,0 +1,37 @@
+<div class="chat-edit">
+  <header>
+    <div class="header-left">
+      <%= link_to image_tag("/photo/arrow.png", class:"edit", :size => "83x83"), posts_path %>
+    </div>
+    <div class="headding">
+      <p>メッセージの編集</p>
+    </div>
+  </header>
+  <div class="mein-wrapper">
+    <div class="chat-wrapper">
+      <div class="container">
+        <div class="heading">
+        <div class="heading-left">
+          <h2>お礼の言葉</h2>
+        </div>
+        <div class="heading-right">
+          <%= link_to "お礼の言葉を登録する", new_thank_path %>
+        </div>
+        </div>
+        <div class="chat-form">
+          <%= form_with url: chat_path, method: "patch" do |form|%>
+            <datalist id="message">
+            <% @thanks.each do |thank| %>
+              <option value=<%= thank.text %> >
+            <% end %>
+            </datalist>
+          <input type="text" value="<%= @chat.message %>" name="chat[message]" />
+            <div class="btn-wrapper">
+              <%= form.submit "更新する"%>   
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
