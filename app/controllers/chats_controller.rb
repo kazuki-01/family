@@ -14,9 +14,15 @@ def create
 end
 
 def edit
+  @chat = Chat.find(params[:id])
+  @thanks = Thank.all.order(created_at: :asc)
 end
 
 def update
+  @chat = Chat.find(params[:id])
+  @chat.update(chat_params)
+  @chat.save
+  redirect_to posts_path
 end
 
 def destroy
