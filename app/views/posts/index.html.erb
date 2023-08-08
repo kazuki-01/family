@@ -76,7 +76,7 @@
                     <p><%= chat.updated_at.strftime('%Y/%m/%d %H:%M') %></p>
                   </div>
                   <div class="message">
-                    <p><%= chat.message %></p>
+                    <%= link_to chat.message, edit_chat_path(chat.id) %>
                   </div>
                 </div>
               <% else %>
