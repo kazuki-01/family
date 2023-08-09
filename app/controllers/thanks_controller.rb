@@ -1,4 +1,5 @@
 class ThanksController < ApplicationController
+  before_action :authenticate
 
   def new
     @thanks = Thank.all.order(created_at: :asc)

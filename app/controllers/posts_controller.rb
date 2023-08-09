@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user! #deviseでログインしていなかったらログイン画面にリダイレクト
+
   def index
     @posts = Post.all.order(created_at: :desc)
     @dones = Done.all.order(created_at: :desc)
