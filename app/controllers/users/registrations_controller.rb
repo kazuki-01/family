@@ -3,6 +3,7 @@
 
   class Users::RegistrationsController < Devise::RegistrationsController
     before_action :configure_permitted_parameters, only: [:create]
+    before_action :fobid_login_user, {only: [:new, :check, :create]}
   
     # GET /users/sign_up
     def new

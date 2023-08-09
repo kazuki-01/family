@@ -10,6 +10,12 @@ class ApplicationController < ActionController::Base
     redirect_to new_user_session_url unless user_signed_in?
   end
 
+  def fobid_login_user #ログインしていたら一覧画面にリダイレクト
+    if @current_user
+      redirect_to("/posts")
+    end
+  end
+
   private
 
   def configure_permitted_parameters
