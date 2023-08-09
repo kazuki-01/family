@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :user_icon
+
+  with_options presence: true do
+    validates :name
+    validates :email
+  end
+
 end
