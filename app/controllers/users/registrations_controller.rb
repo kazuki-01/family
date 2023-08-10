@@ -21,9 +21,13 @@
   
     # POST /users
     def create
+      group = Group.new(group_params)
+      group.save
       Rails.logger.debug('aaaaa')
       super
       Rails.logger.debug('bbbbb')
+      @user.group_id = group.id
+      @user.save
     end
   
     # GET /users/edit
@@ -55,7 +59,11 @@
     private
 
     def user_params
-      params.require(:user).permit(:user_icon, :name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:user_icon, :name, :email, :password, :password_confirmation, group_id)
+    end
+
+    def group_params
+      params.require(:user).permit(:group_name, :paid)
     end
 
     protected
