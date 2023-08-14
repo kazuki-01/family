@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_10_132748) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_14_060815) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_10_132748) do
     t.string "message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "group_id"
   end
 
   create_table "dones", force: :cascade do |t|
@@ -57,6 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_10_132748) do
     t.string "classification", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "group_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -74,12 +76,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_10_132748) do
     t.datetime "updated_at", null: false
     t.string "classification", null: false
     t.boolean "emphasis", default: false, null: false
+    t.integer "group_id"
   end
 
   create_table "thanks", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "group_id"
   end
 
   create_table "users", force: :cascade do |t|
