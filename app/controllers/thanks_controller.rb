@@ -2,7 +2,7 @@ class ThanksController < ApplicationController
   before_action :authenticate
 
   def new
-    @thanks = Thank.all.order(created_at: :asc)
+    @thanks = Thank.where(group_id: current_user.group_id).order(created_at: :desc)
   end
 
   def create

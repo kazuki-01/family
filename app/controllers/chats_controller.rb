@@ -4,7 +4,7 @@ class ChatsController < ApplicationController
 def new
   @chat = Chat.new
   @done = Done.find_by(id: params[:format])
-  @thanks = Thank.all.order(created_at: :asc)
+  @thanks = Thank.where(group_id: current_user.group_id).order(created_at: :desc)
 end
 
 def create

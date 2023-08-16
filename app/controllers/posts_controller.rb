@@ -2,9 +2,9 @@ class PostsController < ApplicationController
   before_action :authenticate_user! #deviseでログインしていなかったらログイン画面にリダイレクト
 
   def index
-    @posts = Post.all.order(created_at: :desc)
-    @dones = Done.all.order(created_at: :desc)
-    @chats = Chat.all.order(created_at: :desc)
+    @posts = Post.where(group_id: current_user.group_id).order(:id)
+    @dones = Done.where(group_id: current_user.group_id).order(:id)
+    @chats = Chat.where(group_id: current_user.group_id).order(created_at: :desc)
   end
 
   def new
