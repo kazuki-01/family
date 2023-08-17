@@ -14,7 +14,9 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new(post_params)
+    post.group_id = current_user.group_id
     wday = Weekly.new(weekly_params)
+    wday.group_id = current_user.group_id
     if post.classification == "generally"
        post.save
       redirect_to posts_path
@@ -61,11 +63,11 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:task, :emphasis, :labor, :classification)
+    params.require(:post).permit(:task, :emphasis, :labor, :classification, :group_id)
   end
 
   def weekly_params
-    params.require(:post).permit(:task, :emphasis, :labor, :classification, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :date)
+    params.require(:post).permit(:task, :emphasis, :labor, :classification, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :date, :group_id)
   end
 
 end

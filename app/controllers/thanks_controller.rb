@@ -7,6 +7,7 @@ class ThanksController < ApplicationController
 
   def create
     thank = Thank.new(thank_params)
+    thank.group_id = current_user.group_id
     thank.save
     redirect_to new_thank_path
   end
@@ -25,7 +26,7 @@ class ThanksController < ApplicationController
 
   private
   def thank_params
-    params.require(:thank).permit(:text)
+    params.require(:thank).permit(:text, :group_id)
   end
 
 end

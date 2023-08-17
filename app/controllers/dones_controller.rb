@@ -8,6 +8,7 @@ class DonesController < ApplicationController
   def create
     done = Done.new(task: params[:task], labor: params[:labor], classification: params[:classification])
     done.user_id = current_user.id
+    done.group_id = current_user.group_id
     done.save
     post = Post.find(params[:id])
     post.destroy
