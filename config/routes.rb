@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     post 'users/check' => 'users/registrations#check'
+    get 'users/index' => 'users/registrations#index'
   end
   resources :posts
   resources :weeklies
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :chats
   resources :thanks
+
+  post 'groups/update' => 'groups#update'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

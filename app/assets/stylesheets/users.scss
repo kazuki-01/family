@@ -285,3 +285,101 @@
     }
   }
 }
+
+
+/* ユーザー一覧画面 (index)ーーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+.user-index{
+  header{
+    background-color: #EE9441;
+    height: 60px;
+    img{
+      margin-top: -7px;
+    } 
+    p{
+      font-size: 24px;
+      color: white;
+      text-align: center;
+      margin-top: -60px;
+    }
+  }
+  .mein-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(250, 223, 169, 0.5);
+    margin-bottom: 0px;
+    .container{
+      width: 90%;
+      margin: 0 auto;
+      h3{
+        padding-top: 40px;
+        font-weight: normal;
+      }
+      .form-wrapper{
+        padding-top: 20px;
+        .text-form{
+          float: left;
+          input{
+            width: 295px;
+            height: 50px;
+            font-size: 20px;
+          }
+        }
+        .btn-wrapper{
+          input{
+            width: 45px;
+            height: 55px;
+            display: block;
+            background-color: #EE9441;
+          }
+        }
+      }
+      .users-wrapper{
+        padding-top: 30px;
+        .user{
+          margin: 5px 0px;
+          padding-left: 10px;
+          height: 70px;
+          width: 100%;
+          font-size: 20px;
+          float: left;
+          .image{
+            img{
+              float: left;
+            }
+          }
+          .name{
+            p{
+              margin-left: 70px;
+              line-height: 50px;
+              font-size: 25px;
+            }
+          }
+        }
+      }
+      .btn-wrapper {
+        margin: 20px 0 20px 20px;
+        text-align: center;
+        a{
+          width: 80%;
+          color: white;
+          font-size: 24px;
+          text-decoration: none;
+          padding: 15px 0px;
+          display: inline-block;
+          background-color: #EE9441;
+          border-radius: 30px;
+          margin: 30px 0 15px 0px;
+        }
+      }
+      .btn{
+        text-align: center;
+        a {
+          display: inline-block;
+          margin: 20px 0 20px 0;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

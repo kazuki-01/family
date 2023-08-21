@@ -6,6 +6,12 @@
     before_action :fobid_login_user, {only: [:new, :check, :create]}
   
     # GET /users/sign_up
+
+    def index
+      @group = Group.find(current_user.group_id)
+      @users = User.where(group_id: current_user.group_id).order(created_at: :asc)
+    end
+
     def new
       super
     end
