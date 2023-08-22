@@ -44,6 +44,8 @@ gem "bootsnap", require: false
 
 gem 'devise'
 
+gem 'devise_invitable'
+
 gem "image_processing", ">= 1.2"
 
 gem 'whenever', require: false
