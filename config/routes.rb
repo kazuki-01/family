@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users, controllers: { registrations: 'users/registrations',invitations: 'users/invitations' }
                      #ユーザー更新するときに、after_update_path_forを有効にする
   
   root 'home#top'
