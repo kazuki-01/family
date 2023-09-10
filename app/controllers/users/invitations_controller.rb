@@ -13,6 +13,10 @@ class Users::InvitationsController < Devise::InvitationsController
 
   def update
     super
+    @user.group_id = User.find(@user.invited_by_id).group_id
+    if @user.save
+      session[:user_id] = @user.id
+    end
   end
 
   def destroy
