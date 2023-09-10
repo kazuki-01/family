@@ -23,6 +23,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
     # 情報更新時にnameの取得を許可
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :user_icon])
+
+    devise_parameter_sanitizer.permit(:invite, keys: [:name])
+    devise_parameter_sanitizer.permit(:accept_invitation, keys: [:name, :password, :password_confirmation, :invitation_token])
+
   end
   
   def after_sign_in_path_for(resource)
