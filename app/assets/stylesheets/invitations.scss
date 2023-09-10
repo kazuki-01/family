@@ -1,0 +1,46 @@
+/* 招待画面 (new)ーーーーーーーーーーーーーーーーーーーーーーーーー*/
+.invitations-new{
+  header{
+    background-color: #EE9441;
+    height: 60px;
+    img{
+      margin-top: -7px;
+    } 
+    p{
+      font-size: 24px;
+      color: white;
+      text-align: center;
+      margin-top: -60px;
+    }
+  }
+  .mein-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(250, 223, 169, 0.5);
+    margin-bottom: 0px;
+    .container{
+      width: 90%;
+      margin: 0 auto;
+      h3{
+        padding-top: 40px;
+        font-weight: normal;
+      }
+      .form{
+        padding-top: 20px;
+        input{
+          width: 60%;
+          height: 30px;
+          font-size: 20px;
+        }
+      }
+      .actions{
+        padding-top: 20px;
+        input{
+          display: block;
+          height: 30px;
+          background-color: #EE9441;
+        }
+      }
+    }
+  }
+}
