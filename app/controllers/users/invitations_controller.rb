@@ -22,4 +22,11 @@ class Users::InvitationsController < Devise::InvitationsController
   def destroy
     super
   end
+
+  private
+
+  def after_accept_path_for(resource)
+    posts_path
+  end
+
 end
