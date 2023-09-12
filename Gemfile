@@ -51,6 +51,7 @@ gem "image_processing", ">= 1.2"
 gem 'whenever', require: false
 
 gem 'payjp'
+gem 'dotenv-rails'
 
 # Use Sass to process CSS
  gem "sassc-rails"
