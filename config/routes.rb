@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :posts
   resources :weeklies
+  resources :cards
 
   get 'dones/new' => 'dones#new'
   post 'dones/create' => 'dones#create'
