@@ -1,0 +1,34 @@
+<div class="creditcards-index">
+  <div class="mypage-main col-9">
+    <h2 class="header_title">
+      支払い方法
+    </h2>
+    <div class="single-container">
+      <section class="creditcard_section">
+        <h3>クレジットカード一覧</h3>
+        <% if @card.present? %>
+          <div class="container">
+            <div class="creditcard-info">
+              <%= image_tag "creditcards/#{@card_image}", width: '34', height: '20', alt: 'master-card' %>
+              <p class="creditcard-info__number">
+                <%= "**** **** **** " + @card_info.last4 %> <!-- クレジットカードの下４桁を表示 -->
+              </p>
+              <p class="creditcard-info__period">
+                <%= @exp_month + " / " + @exp_year %>
+              </p>
+              <%= button_to "削除する", creditcard_path(@card), method: :delete, class: "creditcard-info__delete" %>
+            </div>
+          </div>
+        <% else %>
+          <div class="new-card">
+            <%= link_to new_card_path, class: "new-card-btn" do %>
+              <i class="far fa-credit-card"></i>
+              クレジットカードを追加する
+            <% end %>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>
+

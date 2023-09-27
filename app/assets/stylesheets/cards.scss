@@ -1,0 +1,94 @@
+.creditcards-index{
+
+  // Reset some default browser styles
+  body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  // Apply a background color and set font styles
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+
+  // Style the main container
+  .mypage-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  // Style the header
+  .header_title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  // Style the single-container
+  .single-container {
+    padding: 20px;
+  }
+
+  // Style the credit card section
+  .creditcard_section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  // Style the credit card info
+  .creditcard-info {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    
+    img {
+      margin-right: 10px;
+    }
+    
+    &__number {
+      font-weight: bold;
+    }
+    
+    &__period {
+      color: #555;
+    }
+    
+    &__delete {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      
+      &:hover {
+        background-color: #cc0000;
+      }
+    }
+  }
+
+  // Style the new card button
+  .new-card-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    
+    i {
+      margin-right: 5px;
+    }
+    
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+/* カードの追加画面 (new)ーーーーーーーーーーーーーーーーーーーーーーーーー*/

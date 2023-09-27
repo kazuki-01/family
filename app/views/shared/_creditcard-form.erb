@@ -1,0 +1,76 @@
+<div class="creditcard-form">
+  <div class="container">
+    <h2>支払い方法</h2>
+    <form action="/cards" method="post" name="inputForm" class="form" id="card_form">
+      <div class="form_wrapper">
+        <label for="number">カード番号</label>
+        <span class="form-require">必須</span>
+        <input type="text" name="number" id="number" placeholder="半角数字のみ" class="input-default" maxlength="16">
+        <ol>
+          <li>
+            <img src="/assets/cards/visa.png" alt="写真" width="35px" height="20px">
+          </li>
+          <li>
+            <img src="/assets/cards/master-card.png" alt="写真" width="35px" height="20px">
+          </li>
+          <li>
+            <img src="/assets/cards/jcb.png" alt="写真" width="35px" height="20px">
+          </li>
+          <li>
+            <img src="/assets/cards/american_express.png" alt="写真" width="35px" height="20px">
+          </li>
+          <li>
+            <img src="/assets/cards/dinersclub.png" alt="写真" width="35px" height="20px">
+          </li>
+          <li>
+            <img src="/assets/cards/discover.png" alt="写真" width="35px" height="20px">
+          </li>
+        </ol>
+        <div class="expiry-form">
+          <div class="name">
+            <label for="exp_year">有効期限</label>
+            <span class="form-require">必須</span>
+          </div>
+          <select name="exp_year" id="exp_year" class="input-default harf">
+            <option value="2024">24</option>
+            <option value="2025">25</option>
+            <option value="2026">26</option>
+            <option value="2027">27</option>
+            <option value="2028">28</option>
+            <option value="2029">29</option>
+            <option value="2030">30</option>
+            <option value="2031">31</option>
+            <option value="2032">32</option>
+            <option value="2033">33</option>
+          </select>
+          <span>年</span>
+          <select name="exp_month" id="exp_month" class="input-default harf">
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+            <option value="6">06</option>
+            <option value="7">07</option>
+            <option value="8">08</option>
+            <option value="9">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <span>月</span>
+        </div>
+        <div class="form__upper__group">
+          <label for="cvc">セキュリティーコード</label>
+          <span class="form-require">必須</span>
+          <input type="text" name="cvc" id="cvc" class="cvc input-default" placeholder="カード背面4桁もしくは3桁の番号" maxlength="16">
+        </div>
+        <div class="btn">
+          <input type="submit" value="次へ進む" class="btn-default" id="card-form">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
