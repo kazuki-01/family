@@ -84,3 +84,4 @@ production:
   database: family_production
   username: family
   password: <%= ENV["FAMILY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
