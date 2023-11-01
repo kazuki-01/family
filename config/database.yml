@@ -79,10 +79,9 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-#production:
-#  <<: *default
- # database: family_production
- # username: family
- # password: <%= ENV["FAMILY_DATABASE_PASSWORD"] %>
- production:
+production:
+  <<: *default
+  database: family_production
+  username: family
+  password: <%= ENV["FAMILY_DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
