@@ -35,6 +35,7 @@
        height: auto;
        background-color: rgba(250, 223, 169, 0.5);
        margin-bottom: 0px;
+       padding-bottom: 450px;
      
 
       .task-wrapper{
@@ -167,6 +168,9 @@
         left: 75%;
         top: 75%;
     }
+    .user{
+      padding: 500px 0px;
+    }
     }
   }
 }
@@ -192,7 +196,7 @@
     .mein-wrapper{
        padding-top: 30px;
        width: 100vw;
-       height: 100vh;
+       height: 1000px;
        background-color: rgba(250, 223, 169, 0.5);
        margin-bottom: 0px;
       .formbox{
